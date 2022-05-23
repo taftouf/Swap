@@ -40,7 +40,7 @@ const Swap = ()=>{
       }
 
     const Swap = async(condition)=>{
-        const receipt = "";
+        let receipt = "";
         if(condition === 1){
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
@@ -78,6 +78,7 @@ const Swap = ()=>{
             let contract = new ethers.Contract(contractAddress,abi2,signer);
             await contract.SwapTokenForToken(inputTokenIn3,inputTokenOut3, inputAmount3,signer.getAddress(),overrides);
         }
+        return receipt;
     }
     
     return(

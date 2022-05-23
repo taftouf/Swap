@@ -40,6 +40,7 @@ const Swap = ()=>{
       }
 
     const Swap = async(condition)=>{
+        const receipt = "";
         if(condition === 1){
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
@@ -55,7 +56,7 @@ const Swap = ()=>{
             let contract_1 = new ethers.Contract(inputTokenIn2, abi1, signer);
             let contractAddress = "0x751A3F987DD8b08FB85dfFF163ab9C6982CE1790";
             let tx = await contract_1.approve(contractAddress, inputAmount2);
-            let receipt = await tx.wait();
+            receipt = await tx.wait();
             let overrides = {
                 gasLimit: 750000,
             };
@@ -69,7 +70,7 @@ const Swap = ()=>{
             let contract1 = new ethers.Contract(inputTokenIn3, abi, signer);
             let contractAddress = "0x751A3F987DD8b08FB85dfFF163ab9C6982CE1790";
             let tx = await contract1.approve(contractAddress, inputAmount3);
-            let receipt = await tx.wait();
+            receipt = await tx.wait();
             let overrides = {
                 gasLimit: 750000,
             };

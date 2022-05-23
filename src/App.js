@@ -1,5 +1,5 @@
 import './App.css';
-import { Navbar, Header, Swap } from './components';
+import { Navbar, Swap } from './components';
 
 function App() {
   return (

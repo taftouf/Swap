@@ -164,9 +164,11 @@ const Swap = ()=>{
                                 </div>)
                             
                             ):
-                                (<div className={style.confirmButton}>
-                                Install Metamask
-                                </div>)
+                                (
+                                <a className={style.confirmButton} target="_blank" rel="noreferrer" href={`https://metamask.io/download.html`}>
+                                    Install Metamask
+                                </a>
+                                )
                     }
                 
                 </div>
@@ -211,9 +213,11 @@ const Swap = ()=>{
                                 </div>)
                             
                             ):
-                                (<div className={style.confirmButton}>
-                                Install Metamask
-                                </div>)
+                                (
+                                <a className={style.confirmButton} target="_blank" rel="noreferrer" href={`https://metamask.io/download.html`}>
+                                    Install Metamask
+                                </a>
+                                )
                     }
                 </div>
                 <div className={`${showC ? "" : "hidden"}`}>
@@ -272,9 +276,11 @@ const Swap = ()=>{
                                 </div>)
                             
                             ):
-                                (<div className={style.confirmButton}>
-                                Install Metamask
-                                </div>)
+                                (
+                                <a className={style.confirmButton} target="_blank" rel="noreferrer" href={`https://metamask.io/download.html`}>
+                                    Install Metamask
+                                </a>
+                               )
                     }
                 </div>
             </div>

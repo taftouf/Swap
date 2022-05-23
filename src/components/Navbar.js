@@ -10,7 +10,7 @@ const Navbar = ()=>{
                 </div>
                 <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
-                    <div className="bg-current px-3 py-2 rounded-md text-sm font-medium" aria-current="page"><a href="https://www.linkedin.com/in/hamza-maarouf-4115471a0/" className="hover:underline text-slate-400" rel="noreferrer" target="_blank"> MAAROUF HAMZA </a></div>
+                    <div className="bg-current px-3 py-2 rounded-md text-sm font-medium" aria-current="page"><a href="https://github.com/taftouf/Swap" className="hover:underline text-slate-400" rel="noreferrer" target="_blank"> MAAROUF HAMZA </a></div>
                     </div>
                 </div>
                 </div>

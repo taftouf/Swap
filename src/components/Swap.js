@@ -42,41 +42,55 @@ const Swap = ()=>{
     const Swap = async(condition)=>{
         let receipt = "";
         if(condition === 1){
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            const signer = provider.getSigner();
-            let contractAddress = "0x751A3F987DD8b08FB85dfFF163ab9C6982CE1790";
-            let abi = ["function SwapETHForToken(address token, address to) external payable"];
-            let contract = new ethers.Contract(contractAddress, abi, signer);
-            const options = {value: ethers.utils.parseEther(inputAmount1)};
-            await contract.SwapETHForToken(inputTokenOut1,signer.getAddress(), options);
+            try {
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                const signer = provider.getSigner();
+                let contractAddress = "0x751A3F987DD8b08FB85dfFF163ab9C6982CE1790";
+                let abi = ["function SwapETHForToken(address token, address to) external payable"];
+                let contract = new ethers.Contract(contractAddress, abi, signer);
+                const options = {value: ethers.utils.parseEther(inputAmount1)};
+                await contract.SwapETHForToken(inputTokenOut1,signer.getAddress(), options);
+            } catch (error) {
+                console.log(error);
+            }
+            
         } else if(condition === 2) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            const signer = provider.getSigner();
-            let abi1 = ["function approve(address _spender, uint256 _value) public returns (bool success)"]
-            let contract_1 = new ethers.Contract(inputTokenIn2, abi1, signer);
-            let contractAddress = "0x751A3F987DD8b08FB85dfFF163ab9C6982CE1790";
-            let tx = await contract_1.approve(contractAddress, inputAmount2);
-            receipt = await tx.wait();
-            let overrides = {
-                gasLimit: 750000,
-            };
-            let abi2 = ["function SwapTokenForETH(uint tokenAmount, address token, address to) external"];
-            let contract = new ethers.Contract(contractAddress,abi2,signer);
-            await contract.SwapTokenForETH(inputAmount2,inputTokenIn2,signer.getAddress(),overrides);
+            try {
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                const signer = provider.getSigner();
+                let abi1 = ["function approve(address _spender, uint256 _value) public returns (bool success)"]
+                let contract_1 = new ethers.Contract(inputTokenIn2, abi1, signer);
+                let contractAddress = "0x751A3F987DD8b08FB85dfFF163ab9C6982CE1790";
+                let tx = await contract_1.approve(contractAddress, inputAmount2);
+                receipt = await tx.wait();
+                let overrides = {
+                    gasLimit: 750000,
+                };
+                let abi2 = ["function SwapTokenForETH(uint tokenAmount, address token, address to) external"];
+                let contract = new ethers.Contract(contractAddress,abi2,signer);
+                await contract.SwapTokenForETH(inputAmount2,inputTokenIn2,signer.getAddress(),overrides);
+            } catch (error) {
+                console.log(error);
+            }
+            
         }else{
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            const signer = provider.getSigner();
-            let abi = ["function approve(address _spender, uint256 _value) public returns (bool success)"]
-            let contract1 = new ethers.Contract(inputTokenIn3, abi, signer);
-            let contractAddress = "0x751A3F987DD8b08FB85dfFF163ab9C6982CE1790";
-            let tx = await contract1.approve(contractAddress, inputAmount3);
-            receipt = await tx.wait();
-            let overrides = {
-                gasLimit: 750000,
-            };
-            let abi2 = ["function SwapTokenForToken(address tokenIn,address tokenOut,uint amountIn,address to) external"];
-            let contract = new ethers.Contract(contractAddress,abi2,signer);
-            await contract.SwapTokenForToken(inputTokenIn3,inputTokenOut3, inputAmount3,signer.getAddress(),overrides);
+            try {
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                const signer = provider.getSigner();
+                let abi = ["function approve(address _spender, uint256 _value) public returns (bool success)"]
+                let contract1 = new ethers.Contract(inputTokenIn3, abi, signer);
+                let contractAddress = "0x751A3F987DD8b08FB85dfFF163ab9C6982CE1790";
+                let tx = await contract1.approve(contractAddress, inputAmount3);
+                receipt = await tx.wait();
+                let overrides = {
+                    gasLimit: 750000,
+                };
+                let abi2 = ["function SwapTokenForToken(address tokenIn,address tokenOut,uint amountIn,address to) external"];
+                let contract = new ethers.Contract(contractAddress,abi2,signer);
+                await contract.SwapTokenForToken(inputTokenIn3,inputTokenOut3, inputAmount3,signer.getAddress(),overrides);
+            } catch (error) {
+                console.log(error);
+            }
         }
         return receipt;
     }

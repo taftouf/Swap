@@ -10,8 +10,8 @@ Simple decentralized application based on Solidity and Web3 that swap [ETH => ER
 
 # smart Contract Link
 
-[rinkeby](https://rinkeby.etherscan.io/address/0x751A3F987DD8b08FB85dfFF163ab9C6982CE1790#code)
-[Github](https://github.com/taftouf/SafeSwap)
+- [rinkeby](https://rinkeby.etherscan.io/address/0x751A3F987DD8b08FB85dfFF163ab9C6982CE1790#code)
+- [Github](https://github.com/taftouf/SafeSwap)
 
 # For Testing
 
